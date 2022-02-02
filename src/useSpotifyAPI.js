@@ -5,7 +5,7 @@ export default function useSpotifyAPI (playlistID){
     const [token, setToken] = useState('')
     const [playlistItems, setPlaylistItems] = useState([])
 
-    const client_id = process.env.REACT_APP_CLIENT_ID
+    const client_id = 'de1840e2c1ce41cdabaa0663e1495b5c'
     const client_secret = process.env.REACT_APP_CLIENT_SECRET
 
     useEffect(()=>{
