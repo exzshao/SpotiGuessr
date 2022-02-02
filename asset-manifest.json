@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/spotiguessr/static/css/main.88665709.css",
+    "main.js": "/spotiguessr/static/js/main.05b41b5f.js",
+    "static/js/787.d956ac10.chunk.js": "/spotiguessr/static/js/787.d956ac10.chunk.js",
+    "index.html": "/spotiguessr/index.html",
+    "main.88665709.css.map": "/spotiguessr/static/css/main.88665709.css.map",
+    "main.05b41b5f.js.map": "/spotiguessr/static/js/main.05b41b5f.js.map",
+    "787.d956ac10.chunk.js.map": "/spotiguessr/static/js/787.d956ac10.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.88665709.css",
+    "static/js/main.05b41b5f.js"
+  ]
+}
