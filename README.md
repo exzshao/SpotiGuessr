@@ -1,5 +1,5 @@
-# SpotiGuessr created using Create React App
-A spin on the hit internet game GeoGuessr!
+# SpotiGuessr
+A spin on the hit internet game GeoGuessr, created using React and Spotify's Web API.
 
 How to play:
 1. Enter a playlist link that is publicly accessible
@@ -10,4 +10,4 @@ How to play:
 
 NOTE: Sometimes the song has no preview URL, and thus will not play. In these cases, click the "i don't hear audio" button
 
-Have fun!!! This is a very early version of the game so there will be bugs + the UI is not designed.
+Have fun!!! This is a very early version of the game so there will be bugs. UI in progress.

@@ -61,6 +61,7 @@ function App() {
       <AudioPlayer
           src={currentTrack.preview_url}
           autoPlay={true}
+          volume={0.3}
           // Try other props!
         />
     </div>
