@@ -2,6 +2,7 @@ import { render } from '@testing-library/react';
 import {useEffect, useState, useRef} from 'react';
 import './App.css';
 import useSpotifyAPI from './useSpotifyAPI';
+import Title from './components/Title';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
@@ -84,11 +85,14 @@ function App() {
       <header className="App-header">
 
         {gameState===-1 ? 
-          <form onSubmit= {e => {e.preventDefault(); setPlaylistID(((e.target[0].value).substring(0, e.target[0].value.indexOf('?'))).replace("https://open.spotify.com/playlist/", ""))}}>
-            <label>enter a playlist link: </label>
-            <input autoFocus type="text" placeholder="https://open.spotify.com/playlist/4T5XgcTRrcdlmQLW1ULC0U?si=0e0f20e0546d4358"></input>
-            <button type={"Submit"}>enter</button>
-          </form> : null}
+          <div>
+            <Title />
+            <form onSubmit= {e => {e.preventDefault(); setPlaylistID(((e.target[0].value).substring(0, e.target[0].value.indexOf('?'))).replace("https://open.spotify.com/playlist/", ""))}}>
+              <label>enter a playlist link: </label>
+              <input autoFocus type="text" placeholder="https://open.spotify.com/playlist/4T5XgcTRrcdlmQLW1ULC0U?si=0e0f20e0546d4358"></input>
+              <button type={"Submit"}>enter</button>
+            </form> 
+          </div>: null}
 
         {(playlistID && gameState===-1) ? 
           <div>
