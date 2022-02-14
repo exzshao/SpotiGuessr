@@ -1,5 +1,6 @@
 # SpotiGuessr
 A spin on the hit internet game GeoGuessr, created using React and Spotify's Web API.
+Live at: https://exzshao.github.io/spotiguessr/
 
 How to play:
 1. Enter a playlist link that is publicly accessible
