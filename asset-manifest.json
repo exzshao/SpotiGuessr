@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/spotiguessr/static/css/main.88665709.css",
-    "main.js": "/spotiguessr/static/js/main.1a8d883f.js",
+    "main.js": "/spotiguessr/static/js/main.bfd5362c.js",
     "index.html": "/spotiguessr/index.html",
     "main.88665709.css.map": "/spotiguessr/static/css/main.88665709.css.map",
-    "main.1a8d883f.js.map": "/spotiguessr/static/js/main.1a8d883f.js.map"
+    "main.bfd5362c.js.map": "/spotiguessr/static/js/main.bfd5362c.js.map"
   },
   "entrypoints": [
     "static/css/main.88665709.css",
-    "static/js/main.1a8d883f.js"
+    "static/js/main.bfd5362c.js"
   ]
 }
