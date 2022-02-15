@@ -15,10 +15,12 @@ function App() {
   const [hearsAudio, setHearsAudio] = useState(true)
   //0 = track does not have preview_url, 1 = track has preview_url, 2 = track has preview_url but user says it does not
   const i = useRef(0);
+  const len = useRef(0);
 
 
   function handleGameStartClick(){
     setGameState(0);
+    len.current = playlistItems.length;
     console.log('game started!')
     repeatGame();
   }
@@ -55,9 +57,9 @@ function App() {
     }
   }
 
-
+  //
   const TrackVisual = () => (
-    <div>
+    <div style={{display: "none"}}>
       <AudioPlayer
           src={currentTrack.preview_url}
           autoPlay={true}
@@ -72,7 +74,7 @@ function App() {
      <div className="guessForm">
         <form onSubmit = {e => {e.preventDefault(); handleGuessLogic(e.target[0].value)}}>
           <label>guess the current song: </label>
-          <input autoFocus type="text" placeholder="heeeadsadsada"></input>
+          <input autoFocus type="text" placeholder="Good Song (ft. A)"></input>
           <button type={"Submit"}>guess</button>
         </form>
       <button onClick={() => {setHearsAudio(false)}}>i don't hear audio</button>
@@ -102,7 +104,7 @@ function App() {
             <button onClick = {handleGameStartClick}>Start Game</button>
           </div> : null}
   
-        {gameState === 0 ? <div><TrackVisual /> <GuessForm /></div> : null}
+        {gameState === 0 ? <div><TrackVisual /> <GuessForm /> <p>{len.current}</p></div> : null}
         {gameState === 1 ? <div>You Win!!</div> : null}
         {gameState === 2 ? <div>That's wrong...<br></br> The current track was: <strong>{currentTrack.name}</strong></div> : null}
         {(gameState === 1 || gameState === 2) ? <button onClick = {resetGame}>Play Again?</button> : null}
