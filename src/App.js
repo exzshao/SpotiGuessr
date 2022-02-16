@@ -3,6 +3,7 @@ import {useEffect, useState, useRef} from 'react';
 import './App.css';
 import useSpotifyAPI from './useSpotifyAPI';
 import Title from './components/Title';
+import Counter from './components/Counter';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
@@ -16,7 +17,7 @@ function App() {
   //0 = track does not have preview_url, 1 = track has preview_url, 2 = track has preview_url but user says it does not
   const i = useRef(0);
   const len = useRef(0);
-
+  const counter = useRef(0);
 
   function handleGameStartClick(){
     setGameState(0);
@@ -27,6 +28,7 @@ function App() {
 
   function repeatGame(){
     i.current = Math.floor(Math.random() * playlistItems.length);
+    counter.current++;
     setHearsAudio(true);
     //console.log(i.current);
     console.log(playlistItems[i.current])
@@ -38,11 +40,11 @@ function App() {
     setPlaylistID('')
     setCurrentTrack(null)
     i.current = 0
+    counter.current = 0;
   }
 
   function handleGuessLogic(guess){
     if(guess.toUpperCase() === currentTrack.name.toUpperCase()){
-      console.log("correct!")
       playlistItems.splice(i.current, 1);
       if(playlistItems.length === 0){
         console.log("you win!")
@@ -64,7 +66,6 @@ function App() {
           src={currentTrack.preview_url}
           autoPlay={true}
           volume={0.3}
-          // Try other props!
         />
     </div>
   )
@@ -104,7 +105,7 @@ function App() {
             <button onClick = {handleGameStartClick}>Start Game</button>
           </div> : null}
   
-        {gameState === 0 ? <div><TrackVisual /> <GuessForm /> <p>{len.current}</p></div> : null}
+        {gameState === 0 ? <div><TrackVisual /> <GuessForm /> <Counter counter = {counter.current} len={len.current}/></div> : null}
         {gameState === 1 ? <div>You Win!!</div> : null}
         {gameState === 2 ? <div>That's wrong...<br></br> The current track was: <strong>{currentTrack.name}</strong></div> : null}
         {(gameState === 1 || gameState === 2) ? <button onClick = {resetGame}>Play Again?</button> : null}
