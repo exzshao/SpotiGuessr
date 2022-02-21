@@ -3,6 +3,7 @@ import {useEffect, useState, useRef} from 'react';
 import './App.css';
 import useSpotifyAPI from './useSpotifyAPI';
 import Title from './components/Title';
+import Instructions from './components/Instructions'
 import Counter from './components/Counter';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
